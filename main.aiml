@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<aiml>
+<category>
+    <pattern>HELLO</pattern>
+    <template>
+        Hello, I am Sandy. Your Career Advisor. What is your name?
+    </template>
+</category>
+
+<category>
+    <pattern>HI</pattern>
+    <template>
+        Hello, I am Sandy. Your Career Advisor. What is your name?
+    </template>
+</category>
+
+<category>
+    <pattern> *</pattern>
+    <template>It is very nice to meet you <star index="1"/>. How can I help you today?
+        <button>
+            <text>TELL ME THE TOP 5 CAREERS IN THE US TODAY</text>
+            <postback>TOP5</postback>
+        </button>
+        
+        <button>
+            <text>HELP ME CHOOSE A CAREER</text>
+            <postback>CHOOSECAREER</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>TOP5</pattern>
+    <template>Here are the top 5 careers in the US for undergraduates with a computer science degree:
+        <ul>
+            <li>Software Engineer</li>
+            <li>Product Manager</li>
+            <li>Hardware Engineer</li>
+            <li>Network Architect</li>
+            <li>User Interface Designer</li>
+        </ul>
+    <button>
+        <text> HELP ME CHOOSE A CAREER</text>
+        <postback>CHOOSECAREER</postback>
+    </button>
+    <link>
+        <text>More information on careers</text>
+        <url>https://www.usnews.com/education/best-graduate-schools/articles/2019-05-02/what-can-you-do-with-a-computer-science-degree</url>
+    </link>
+    </template>
+</category>
+
+<category>
+    
+    <pattern>CHOOSECAREER</pattern>
+    <template>Sure, let's help you choose a career! First, let me ask you a few questions.<br></br><br></br>
+    
+    Do you enjoy developing software products?
+    <button>
+        <text>YES</text>
+        <postback>SOFTWAREYES</postback>
+    </button>
+    <button>
+        <text>NO</text>
+        <postback>SOFTWARENO</postback>
+    </button>    
+    </template>
+</category>
+    
+<category>
+    <pattern>SOFTWAREYES</pattern>
+    <template>Do you like interacting with customers?
+    
+    <button>
+        <text>YES</text>
+        <postback>CUSTOMERYES</postback>
+    </button> 
+    
+    <button>
+        <text>NO</text>
+        <postback>CUSTOMERNO</postback>
+    </button>    
+    </template>
+</category>
+
+<category>
+    <pattern>CUSTOMERYES</pattern>
+    <template> I think you'd make an excellent Software Product Manager!<br></br>
+    <link>
+        <text>Click here to learn more</text>
+        <url>https://www.productplan.com/product-manager-job-description/</url>
+    </link>
+    </template>
+</category>
+
+<category>
+    <pattern>SOFTWARENO</pattern>
+    <template>Which of the following excites you the most?
+    <button>
+        <text>I like network/security</text>
+        <postback>NETWORKSECURITY</postback>
+    </button>
+    
+    <button>
+        <text>I enjoy researching/building computer systems</text>
+        <postback>HARDWAREENGINEER</postback>
+    </button>    
+    </template>
+</category>
+
+<category>
+    <pattern>NETWORKSECURITY</pattern>
+    <template> I think you'd make an excellent Network Security Engineer!<br></br>
+    <link>
+        <text>Click here to learn more</text>
+        <url>https://www.fieldengineer.com/blogs/network-security-engineer-job</url>
+    </link>
+    </template>
+</category>
+    
+<category>
+    <pattern>HARDWAREENGINEER</pattern>
+    <template> I think you'd make an excellent Hardware Engineer!<br></br>
+    <link>
+        <text>Click here to learn more</text>
+        <url>https://www.thebalancecareers.com/computer-hardware-engineer-525999</url>
+    </link>
+    </template>
+</category>
+
+<category>
+    <pattern>CUSTOMERNO</pattern>
+    <template>Which of the following do you enjoy the most?
+    <button>
+        <text>I prefer developing, debugging, and maintaining software</text>
+        <postback>SOFTWAREENGINEER</postback>
+    </button>
+    
+    <button>
+        <text>I really enjoy designing and developing code</text>
+        <postback>USERINT</postback>
+    </button>
+    </template>
+</category>
+    
+<category>
+    <pattern>SOFTWAREENGINEER</pattern>
+    <template> I think you'd make an excellent Software Engineer!<br></br>
+    <link>
+        <text>Click here to learn more</text>
+        <url>https://educatingengineers.com/careers/software-engineer</url>
+    </link>
+    </template>
+</category>
+
+<category>
+    <pattern>USERINT</pattern>
+    <template> I think you'd make an excellent User Interface Developer!<br></br>
+    <link>
+        <text>Click here to learn more</text>
+        <url>https://artisantalent.com/job-descriptions/ui-developer-job-description/</url>
+    </link>
+    </template>
+</category>
+    
+
+</aiml>
